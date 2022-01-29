@@ -6,13 +6,13 @@
 }
 .catalog {
    max-width: 1200px;
-   color:bisque;
+     color:black;
 }
 .container {
    display: flex;
-   justify-content: space-around;
+   justify-content:center;
    flex-wrap: wrap;
-   background-color:bisque;
+    background-color:bisque;
    padding: 20px;
 
 }
@@ -22,45 +22,92 @@
    text-align: center;
    margin-right: 20px;
 }
+.photo {
+   max-width: 100%;
+   height: 100%;
+   width: 100%;
+   transform: scale(0.5);
+}
+.cards_photo:hover .photo{
+   transform: scale(1);
+  }
 .cards_photo {
-   background-color:white;
-   height: 50%;
-   width: 20%;
+   background-color: white;
+   height: 250px;
+   width: 100%;
    position: relative;
+}
+.cards_photo:hover p{
+   display: block;
 }
 .cards_photo:before {
 content: 'Sale';
 position: absolute;
-color: rgb(255, 255, 255, .5);
+color: white;
 top: 0;
 left: 0;
 padding: 10px 15px;
 background-color: rgb(150, 102, 102);
 z-index: 1;
-font-size: 12px;
-}
-.photo {
-   max-width: 100%;
-   height: 100%;
-   width: 100%;
-   border-radius: 7px;
-    object-fit: cover;
-   transform: scale(0.5);
+font-size: 13px;
 }
 .cards_view{
    display: none;
    padding: 15px 0px;
-   background-color:white;
+   background-color:  rgb(209, 203, 195, 0.3);
    position: absolute;
    bottom: -16px;
    width: 100%;
 }
 .prise {
    display: flex;
+    color: black
    justify-content: center;
    margin-bottom: 15px;
 }
 .full_prise {
    margin-right: 15px;
    text-decoration: line-through;
+}
+@media (min-width:425px){
+   .cards_photo{
+      height: 300px;
+   }
+}
+@media (min-width:768px){
+   .cards{
+      width: calc(50% - 10px);
+      margin-right: 0;
+   }
+   .cards:nth-child(odd){
+      margin-right: 15px;
+   }
+   .cards_photo {
+      height: 330px;
+  }
+  .container{
+   justify-content: flex-start;
+  }
+}
+@media (min-width:1024px){
+   .cards {
+      width: calc(33% - 10px);
+      margin-right: 15px;
+   }
+   .cards:nth-child(3n){
+      margin-right: 0;
+   }
+}
+@media (min-width:1200px){
+   .catalog{
+      margin: 0 auto;
+      font-size: 16px;
+   }
+   .cards{
+      width: calc(33.3% - 10px);
+   }
+   .cards_photo{
+      width: 100%;
+      height: 350px;
+   }
 }
